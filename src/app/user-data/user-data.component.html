@@ -1,0 +1,33 @@
+<div class="container-fluid mt-5">
+  <h4 class="text-center">Input Select Task</h4>
+  <div class="row mt-3">
+    <div class="col-md-4 col-lg-4">
+      <div class="p-3 border">
+        <form class="row g-3" [formGroup]="userdata">
+          <label class="form-label">Select input 1:</label>
+          <select class="form-select" aria-label="Default select example" formControlName="select">
+            <option selected>select menu</option>
+            <option *ngFor="let item of users">{{item.name}}</option>
+          </select>
+
+          <label class="form-label">Select input 2:</label>
+          <select class="form-select" aria-label="Default select example" formControlName="select2">
+            <option selected>select menu</option>
+            <option *ngFor="let item of data">{{item.label}}</option>
+          </select>
+
+          <label class="form-label">Select input 3:</label>
+          <select class="form-select" aria-label="Default select example" formControlName="select3">
+            <option selected>select menu</option>
+            <option *ngFor="let item of userarr">{{item.label}}</option>
+          </select>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-8 col-lg-8">
+      <app-cr-select [userlist]="userdata.value.select" [localuser]="userdata.value.select2"
+        [localarr]="userdata.value.select3">
+      </app-cr-select>
+    </div>
+  </div>
+</div>
